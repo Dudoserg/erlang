@@ -31,13 +31,24 @@ head([H|T]) -> H.
 
 
 
+
+
+
+
 sum([],[],[P|A]) ->
-  [];
+  P;
+
+sum([H1|T1],[],[P|A]) ->
+  RAZ = H1 + P,
+  DWA = sum([], T1, [0]),
+  RES = (RAZ) * 10 + DWA,
+  RES;
 
 sum([],[H2|T2],[P|A]) ->
   RAZ = H2 + P,
   DWA = sum([], T2, [0]),
-  [RAZ] ++ DWA;
+  RES = (RAZ) * 10 + DWA,
+  RES;
 
 
 
@@ -48,14 +59,15 @@ sum([HF | TF], [HS | TS], [P|A]) ->
   erlang:display(TS),
   erlang:display(""),
 
-  [PERENOS  |[CELOE|ASD]] = plus(HF, HS),
+  [PERENOS |[CELOE|ASD]] = plus(HF, HS),
 
   RAZ = (CELOE + P),
   DWA = sum(TF, TS, [PERENOS]),
-  [CELOE + P] ++ sum(TF, TS, [PERENOS]).
+  RES = (DWA + RAZ ) * 10,
+  RES.
 
 start() ->
-  L = 228,
-  F = 1488,
+  F = 2288,
+  L = 1488,
   erlang:display("result="),
   erlang:display(sum(rev(cut(L)), rev(cut(F)), [0])).
