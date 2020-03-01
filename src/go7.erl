@@ -43,18 +43,8 @@ sum([HF | TF], [HS | TS], [P|A]) ->
   (CELOE + P + sum(TF, TS, [PERENOS]) ) * 10.
 
 start() ->
-  F = 228,
-  L = 1488,
   erlang:display("result="),
-  erlang:display(sum(rev(cut(L)), rev(cut(F)), [0])).
+  erlang:display(sum(rev(cut(228)), rev(cut(1488)), [0]) / 10).
 
 
-simple_test() ->
-  [
-    ?assert(sum(rev(cut(L)), rev(cut(F)), [0]) / 10, [15, 2, 1])),
-    ?assert(kek([15, 2, 1, 3, 3, 17, 2, 5, 7], [15])),
-    ?assert(kek([15, 2, 1, 3, 3, 17, 2, 5, 7], [2, 5, 7])),
-    ?assert(kek([15, 2, 1, 3, 3, 17, 2, 5, 7], [7])),
-    ?assert(kek([15, 2, 1, 3, 3, 17, 2, 5, 7], [3, 3, 17])),
-    ?assert(kek([15, 2, 1, 3, 3, 17, 2, 5, 7], [15, 2, 1, 3, 3, 17, 2, 5, 7]))
-  ].
+
