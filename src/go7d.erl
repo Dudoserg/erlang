@@ -6,7 +6,7 @@
 %%% @end
 %%% Created : 17. Февр. 2020 14:08
 %%%-------------------------------------------------------------------
--module(go7).
+-module(go7d).
 -author("Dudoser").
 -include_lib("eunit/include/eunit.hrl").
 
